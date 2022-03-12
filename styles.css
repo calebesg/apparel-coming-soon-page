@@ -1,9 +1,7 @@
 :root {
   --desaturated-red: hsl(0, 36%, 70%);
   --soft-red: hsl(0, 93%, 68%);
-
-  /* --linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%);
-  --linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%); */
+  --dark-grayish-red: hsl(0, 6%, 24%);
 }
 
 *,
@@ -40,11 +38,13 @@ header img.logo {
 }
 
 /* Content ------------------------ */
+
 .content .title {
   margin-top: 3.125rem;
   text-align: center;
   letter-spacing: 1rem;
   font-weight: 600;
+  color: var(--dark-grayish-red);
 }
 
 .content .title span {
@@ -136,4 +136,63 @@ form {
 .form-wrap.error .notify {
   opacity: 1;
   width: fit-content;
+}
+
+@media (min-width: 62.5rem) { /* 1000px */
+  body {
+    display: grid;
+    grid-template-areas:
+      "header image"
+      "content image";
+    grid-template-columns: 1fr 38.125rem;
+    grid-template-rows: auto 1fr;
+  }
+
+  .content-width {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 70px;
+    padding: 0;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  header img.logo {
+    width: 10rem;
+  }
+
+  .image-wrap {
+    grid-area: image;
+    background-image: url(./images/hero-desktop.jpg);
+    background-size: cover;
+    height: 100%;
+  }
+
+  main {
+    grid-area: content;
+  }
+
+  main::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 38.125rem;
+    z-index: -1;
+    background: url(./images/bg-pattern-desktop.svg) no-repeat;
+    background-size: cover;
+  }
+
+  .content .title {
+    text-align: left;
+    font-size: 4.125rem;
+  }
+
+  .content .description {
+    text-align: left;
+  }
 }
