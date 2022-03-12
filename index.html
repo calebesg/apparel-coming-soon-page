@@ -15,7 +15,7 @@
 </head>
 <body>
   <header class="content-width">
-    <a href="#">
+    <a href="/">
       <img class="logo" src="./images/logo.svg" alt="Logo Base Apparel">
     </a>
   </header>
@@ -33,7 +33,13 @@
 
     <form action="#">
       <div class="form-wrap error">
-        <input type="email" name="email" placeholder="Email Address">
+        <input 
+          id="email" 
+          type="email" 
+          name="email" 
+          placeholder="Email Address" 
+          maxlength="50"
+        />
         <button aria-label="Confirmar Email">
           <img src="./images/icon-arrow.svg" alt="" aria-hidden="true">
         </button>
